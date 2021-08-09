@@ -10,11 +10,6 @@
       paths:
         - "defaults/os"
 
-- name: install default packages
-  package:
-    name: "{{ default_packages | flatten }}"
-    state: "present"
-
 - name: grab os / distribution / version specific tasks
   include_tasks: "{{ item }}"
   vars:
