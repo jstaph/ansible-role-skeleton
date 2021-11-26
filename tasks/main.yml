@@ -19,4 +19,3 @@
         - "{{ ansible_os_family }}/{{ ansible_distribution }}.yml"
         - "{{ ansible_os_family }}.yml"
   loop: "{{ query('first_found', params, errors='ignore') }}"
-
