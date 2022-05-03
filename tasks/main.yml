@@ -1,15 +1,4 @@
 ---
-- include_vars: "{{ lookup('first_found', params) }}"
-  vars:
-    params:
-      files:
-        - "{{ ansible_os_family }}/{{ ansible_distribution }}/{{ ansible_distribution_major_version }}.yml"
-        - "{{ ansible_os_family }}/{{ ansible_distribution }}.yml"
-        - "{{ ansible_os_family }}.yml"
-        - "main.yml"
-      paths:
-        - "defaults/os"
-
 - name: grab os / distribution / version specific tasks
   include_tasks: "{{ item }}"
   vars:
